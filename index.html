@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Createwithus.us</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,100'>
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Roboto+Slab:300'>
+    <script src="http://code.jquery.com/jquery-latest.js"></script><!-- Inserting JQuery -->
+    <script> 
+      $(document).ready(function() { // Initiate Document 
+        $('#button').click(function() { // Execute Function when Button is Clicked
+          var toAdd = $('input[name=checkListItem]').val(); // Takes the Value From Input
+      $('.list').append('<div class="item">' + toAdd + '</div>'); // Defines a div with the class of item with the value from the item input
+      $('input[name=checkListItem]').val(''); // Clears input field on click
+      $('.item').click(function() { // Item must be located, otherwise it will not run when clicked only.
+      $(this).remove(); // Div removed, however it needs to be inside the parent element otherwise it won't be recognised.
+      }); 
+        $('.item').click(function() { // Button must be clicked to make it work.
+          $(this).remove(); // Div removed, however it needs to be inside the parent element otherwise it won't be recognised.
+        }); // end of item.click
+        $('.delete').click(function() {
+            $('.item').remove();
+        }); 
+      }); 
+    </script>
+  </head>
+
+  <body>
+
+    <header class="primary-header container group">
+
+      <h1 class="logo">
+        Createwith.us
+      </h1>
+
+    </header>
+
+
+    <section class="hero container">
+
+      <h2> Are you looking for a simple list builder? </h2>
+
+      <p> Excellent! Createwith.us are dedicated to making list building <br>
+          a whole lot easier. It's a brand list app in Javascript with JQuery. <br>
+          I had a focus on design, and felt I portrayed that well in the application <br>
+          Happy List Building! 
+      </p>
+
+    </section>
+
+    <section class="row">
+      <div class="grid">
+
+        <h1>
+          Shopping List? To-Do List? <br>
+          It's whatever you need it to be
+        </h1>
+        <div class="wrap">
+        <input type="text" name="checkListItem"/>
+        <div id="button">+</div>
+        </div>
+        <div class="list">
+                <div class="item">Type in your item and press the button to add a new List Item</div>
+                <div class="item">Click on a List Item to remove it from the List</div>
+                <div class="item">Happy Building</div>
+        </div>
+        <div class="delete-wrap"><div class="delete">delete everything</div></div>
+
+      </div>
+    </section>
+
+    <footer class="primary-footer container group">
+
+      <small>&copy; Createwith.us</small>
+
+    </footer>
+
+  </body>
+</html>
