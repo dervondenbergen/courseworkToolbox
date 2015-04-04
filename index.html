@@ -13,8 +13,8 @@
         $('#button').click(function() { // Execute Function when Button is Clicked
           var toAdd = $('input[name=checkListItem]').val(); // Takes the Value From Input
       $('.list').append('<div class="item">' + toAdd + '</div>');// Defines a div with the class of item with the value from the item input
-      });
       $('input[name=checkListItem]').val(''); // Clears input field on click
+      });
       $('.item').click(function() { // Item must be located, otherwise it will not run when clicked only.
       $(this).remove(); // Div removed, however it needs to be inside the parent element otherwise it won't be recognised.
       }); 
